@@ -1,0 +1,19 @@
+when using for-in statements, you may want to filter out functions and
+prototype properties you don't want:
+    var name;
+    for(name in cat){
+        if(typeof cat[name] !== 'function'){
+            document.writeln(name + ': ' + cat[name]);
+        }
+    }
+
+    don't use this if you want to display properties in a specific
+    order
+
+delete operator can be used to remove a property from an object. It
+won't touch any of the objects in the prototype linkage. If there
+is a property in the prototype linkage, then the deletion will
+reveal that property instead.
+
+Avoid use of global vars w/ single global var:
+    var myApp = {}; // container for application

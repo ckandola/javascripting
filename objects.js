@@ -19,5 +19,18 @@ console.log(pizza);
     properties. Object.prototype comes standard w/ JS
 
     When creating a new object, you can select the object that should be
-    its prototype
+    its prototype.
+
+    if(typeof Object.create != 'function'){
+        Object.create = function(o){
+            var F = function(){};
+            F.prototype = o;
+            return new F();
+        };
+    }
+    var another_cat = Object.create(cat);
+
+    prototyping is only used in retrieval, not in updating
+
+    hasOwnProperty() doesn't look at prototype chain
 */
