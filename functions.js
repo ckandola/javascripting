@@ -41,4 +41,15 @@ console.log(eat('bananas'));
 
         myObject.double();
         document.writeln(myObject.value);
+
+        ---------------------------------------------------
+        var helper = function(){
+            this.value = add(this.value, this.value);
+        }.bind(this);
+
+        helper();
+
+        ---------------------------------------------------
+        var helper = () => this.value = 4 + 5;
+        helper();
 */
